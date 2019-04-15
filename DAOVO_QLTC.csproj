@@ -1,0 +1,227 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{24AEFEA0-04BA-4F9E-85EA-4FA55C02BF8C}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DAOVO_QLTC</RootNamespace>
+    <AssemblyName>DAOVO_QLTC</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DBUtils.cs" />
+    <Compile Include="FrmDanhmuchocphi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmDanhmuchocphi.Designer.cs">
+      <DependentUpon>FrmDanhmuchocphi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmQuanligiaovien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmQuanligiaovien.Designer.cs">
+      <DependentUpon>FrmQuanligiaovien.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frmtrangchu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frmtrangchu.Designer.cs">
+      <DependentUpon>Frmtrangchu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_dangnhap.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_dangnhap.Designer.cs">
+      <DependentUpon>Frm_dangnhap.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_Danhmucmiengiam.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_Danhmucmiengiam.Designer.cs">
+      <DependentUpon>Frm_Danhmucmiengiam.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_doimatkhau.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_doimatkhau.Designer.cs">
+      <DependentUpon>Frm_doimatkhau.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_Lươnggiaovien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_Lươnggiaovien.Designer.cs">
+      <DependentUpon>Frm_Lươnggiaovien.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_Main.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_Main.Designer.cs">
+      <DependentUpon>Frm_Main.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_Phieuthuhocphi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_Phieuthuhocphi.Designer.cs">
+      <DependentUpon>Frm_Phieuthuhocphi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_Quanlihocsinh.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_Quanlihocsinh.Designer.cs">
+      <DependentUpon>Frm_Quanlihocsinh.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_Quanlinguonchi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_Quanlinguonchi.Designer.cs">
+      <DependentUpon>Frm_Quanlinguonchi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_Quanlinguonthu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_Quanlinguonthu.Designer.cs">
+      <DependentUpon>Frm_Quanlinguonthu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_taotaikhoan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_taotaikhoan.Designer.cs">
+      <DependentUpon>Frm_taotaikhoan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_Danhsachhocphi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_Danhsachhocphi.Designer.cs">
+      <DependentUpon>Frm_Danhsachhocphi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MDIParent1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MDIParent1.Designer.cs">
+      <DependentUpon>MDIParent1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FrmDanhmuchocphi.resx">
+      <DependentUpon>FrmDanhmuchocphi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmQuanligiaovien.resx">
+      <DependentUpon>FrmQuanligiaovien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frmtrangchu.aa-DJ.resx">
+      <DependentUpon>Frmtrangchu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frmtrangchu.resx">
+      <DependentUpon>Frmtrangchu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_dangnhap.resx">
+      <DependentUpon>Frm_dangnhap.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_Danhmucmiengiam.resx">
+      <DependentUpon>Frm_Danhmucmiengiam.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_doimatkhau.resx">
+      <DependentUpon>Frm_doimatkhau.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_Lươnggiaovien.resx">
+      <DependentUpon>Frm_Lươnggiaovien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_Main.resx">
+      <DependentUpon>Frm_Main.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_Phieuthuhocphi.resx">
+      <DependentUpon>Frm_Phieuthuhocphi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_Quanlihocsinh.resx">
+      <DependentUpon>Frm_Quanlihocsinh.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_Quanlinguonchi.resx">
+      <DependentUpon>Frm_Quanlinguonchi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_Quanlinguonthu.resx">
+      <DependentUpon>Frm_Quanlinguonthu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_taotaikhoan.resx">
+      <DependentUpon>Frm_taotaikhoan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_Danhsachhocphi.resx">
+      <DependentUpon>Frm_Danhsachhocphi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MDIParent1.resx">
+      <DependentUpon>MDIParent1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1_82710.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\33619917_1990497780983642_6024459641512001536_n.jpg" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
