@@ -89,6 +89,12 @@
     <Compile Include="Frm_Lươnggiaovien.Designer.cs">
       <DependentUpon>Frm_Lươnggiaovien.cs</DependentUpon>
     </Compile>
+    <Compile Include="Frm_MainAdmin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_MainAdmin.Designer.cs">
+      <DependentUpon>Frm_MainAdmin.cs</DependentUpon>
+    </Compile>
     <Compile Include="Frm_Main.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -162,6 +168,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Frm_Lươnggiaovien.resx">
       <DependentUpon>Frm_Lươnggiaovien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_MainAdmin.resx">
+      <DependentUpon>Frm_MainAdmin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Frm_Main.resx">
       <DependentUpon>Frm_Main.cs</DependentUpon>

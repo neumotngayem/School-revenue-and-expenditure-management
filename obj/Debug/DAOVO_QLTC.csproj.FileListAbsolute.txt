@@ -45,3 +45,4 @@ D:\Own Project\CHUYÊN ĐỀ\DAOVO_QLTC\obj\Debug\DAOVO_QLTC.csproj.CoreCompileI
 D:\Own Project\CHUYÊN ĐỀ\DAOVO_QLTC\obj\Debug\aa-DJ\DAOVO_QLTC.resources.dll
 D:\Own Project\CHUYÊN ĐỀ\DAOVO_QLTC\obj\Debug\DAOVO_QLTC.exe
 D:\Own Project\CHUYÊN ĐỀ\DAOVO_QLTC\obj\Debug\DAOVO_QLTC.pdb
+D:\Own Project\CHUYÊN ĐỀ\DAOVO_QLTC\obj\Debug\DAOVO_QLTC.Frm_MainAdmin.resources
