@@ -112,7 +112,7 @@
             this.ckbShowPwd.TabIndex = 7;
             this.ckbShowPwd.Text = "Show password";
             this.ckbShowPwd.UseVisualStyleBackColor = false;
-            this.ckbShowPwd.CheckedChanged += new System.EventHandler(this.ChangeShowPasswordEventHandler);
+            this.ckbShowPwd.CheckedChanged += new System.EventHandler(this.ShowPasswordChangeEventHandler);
             // 
             // errorProvider
             // 

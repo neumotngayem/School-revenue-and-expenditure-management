@@ -19,7 +19,7 @@ namespace DAOVO_QLTC
             InitializeComponent();
         }
 
-        private void ChangeShowPasswordEventHandler(object sender, EventArgs e)
+        private void ShowPasswordChangeEventHandler(object sender, EventArgs e)
         {
             if (ckbShowPwd.Checked)
             {
