@@ -96,6 +96,7 @@ namespace DAOVO_QLTC
                 MessageBox.Show("Đã thêm người dùng");
                 LoadGridAccountData();
                 grdAccount.Refresh();
+                ResetInput();
             }
             else
             {
@@ -190,6 +191,37 @@ namespace DAOVO_QLTC
             {
                 txtPassword.PasswordChar = '*';
             }
+        }
+
+        private void BtnDeleteClickEventHandler(object sender, EventArgs e)
+        {
+            DialogResult confirmDelete = MessageBox.Show("Bạn có thực sự muốn xóa tài khoản này không ?", "Xóa tài khoản", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if(confirmDelete == DialogResult.Yes)
+            {
+                string selectID = grdAccount.SelectedCells[0].Value.ToString();
+                SqlConnection conn = DBUtils.getConnection();
+                conn.Open();
+                SqlCommand command = new SqlCommand();
+                command.Connection = conn;
+                command.CommandText = "DELETE NGUOIDUNG WHERE Username=@Username";
+
+                SqlParameter paramUsername = new SqlParameter();
+                paramUsername.ParameterName = "@Username";
+                paramUsername.Value = selectID;
+                command.Parameters.Add(paramUsername);
+
+                command.ExecuteNonQuery();
+                CloseConnection(conn);
+                LoadGridAccountData();
+            }
+        }
+
+        private void ResetInput()
+        {
+            txtUsername.Text = "";
+            txtPassword.Text = "";
+            txtRePassword.Text = "";
+            txtStaffID.Text = "";
         }
     }
 }

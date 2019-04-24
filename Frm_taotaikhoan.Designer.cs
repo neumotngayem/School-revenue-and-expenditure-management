@@ -191,6 +191,7 @@
             this.btn_xoa.TabIndex = 14;
             this.btn_xoa.Text = "Xóa ";
             this.btn_xoa.UseVisualStyleBackColor = false;
+            this.btn_xoa.Click += new System.EventHandler(this.BtnDeleteClickEventHandler);
             // 
             // label5
             // 
