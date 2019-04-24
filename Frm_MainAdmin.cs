@@ -27,9 +27,10 @@ namespace DAOVO_QLTC
             }
         }
 
-        private void quảnLíGiáoViênToolStripMenuItem_Click(object sender, EventArgs e)
+        private void BtnCreateAccClickEventHandler(object sender, EventArgs e)
         {
-            
+            Frm_taotaikhoan frmNewAcc = new Frm_taotaikhoan();
+            frmNewAcc.Show();
         }
     }
 }
