@@ -81,6 +81,7 @@
             this.btnsuahp.TabIndex = 11;
             this.btnsuahp.Text = "Sửa";
             this.btnsuahp.UseVisualStyleBackColor = true;
+            this.btnsuahp.Click += new System.EventHandler(this.btnsuahp_Click);
             // 
             // btnxoahp
             // 
@@ -193,6 +194,8 @@
             // 
             // dgvDMhocphi
             // 
+            this.dgvDMhocphi.AllowUserToAddRows = false;
+            this.dgvDMhocphi.AllowUserToDeleteRows = false;
             this.dgvDMhocphi.BackgroundColor = System.Drawing.Color.White;
             this.dgvDMhocphi.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvDMhocphi.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -201,9 +204,13 @@
             this.namhoc,
             this.tienhoc});
             this.dgvDMhocphi.Location = new System.Drawing.Point(6, 16);
+            this.dgvDMhocphi.MultiSelect = false;
             this.dgvDMhocphi.Name = "dgvDMhocphi";
+            this.dgvDMhocphi.ReadOnly = true;
+            this.dgvDMhocphi.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvDMhocphi.Size = new System.Drawing.Size(735, 150);
             this.dgvDMhocphi.TabIndex = 0;
+            this.dgvDMhocphi.SelectionChanged += new System.EventHandler(this.dgvDMhocphi_SelectionChanged);
             // 
             // maloaihocphi
             // 
@@ -211,24 +218,28 @@
             this.maloaihocphi.HeaderText = "Mã loại học phí ";
             this.maloaihocphi.MaxInputLength = 39767;
             this.maloaihocphi.Name = "maloaihocphi";
+            this.maloaihocphi.ReadOnly = true;
             // 
             // tenloaihocphi
             // 
             this.tenloaihocphi.DataPropertyName = "tenloaihocphi";
             this.tenloaihocphi.HeaderText = "Tên học phí ";
             this.tenloaihocphi.Name = "tenloaihocphi";
+            this.tenloaihocphi.ReadOnly = true;
             // 
             // namhoc
             // 
             this.namhoc.DataPropertyName = "namhoc";
             this.namhoc.HeaderText = "Năm học ";
             this.namhoc.Name = "namhoc";
+            this.namhoc.ReadOnly = true;
             // 
             // tienhoc
             // 
             this.tienhoc.DataPropertyName = "tienhoc";
             this.tienhoc.HeaderText = "Tổng tiền ";
             this.tienhoc.Name = "tienhoc";
+            this.tienhoc.ReadOnly = true;
             // 
             // FrmDanhmuchocphi
             // 
