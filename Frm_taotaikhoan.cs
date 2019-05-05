@@ -17,7 +17,27 @@ namespace DAOVO_QLTC
         public Frm_taotaikhoan()
         {
             InitializeComponent();
+            LoadCbbStaffList();
             LoadGridAccountData();
+        }
+
+        private void LoadCbbStaffList()
+        {
+            SqlConnection conn = DBUtils.getConnection();
+            conn.Open();
+            SqlCommand command = new SqlCommand();
+            command.Connection = conn;
+            command.CommandText = "Select * from NHANVIEN";
+
+            SqlDataReader reader = command.ExecuteReader();
+            while (reader.Read())
+            {
+                ComboBoxItem item = new ComboBoxItem();
+                item.Text = reader["manhanvien"] + " - " + reader["tennhanvien"];
+                item.Value = reader["manhanvien"];
+                cbbStaff.Items.Add(item);
+            }
+            cbbStaff.SelectedIndex = 0;
         }
 
         private void LoadGridAccountData()
@@ -39,7 +59,7 @@ namespace DAOVO_QLTC
             string usernameInput = txtUsername.Text;
             string passwordInput = GetMd5Hash(md5Hash, txtPassword.Text);
             string repasswordInput = GetMd5Hash(md5Hash, txtRePassword.Text);
-            string staffIdInput = txtStaffID.Text;
+            string staffIdInput = (cbbStaff.SelectedItem as ComboBoxItem).Value.ToString();
 
             if (string.IsNullOrWhiteSpace(usernameInput) || string.IsNullOrWhiteSpace(passwordInput) || string.IsNullOrWhiteSpace(repasswordInput) || string.IsNullOrWhiteSpace(staffIdInput)) 
             {
@@ -56,12 +76,6 @@ namespace DAOVO_QLTC
             if(!IsRePasswordMatch(passwordInput, repasswordInput))
             {
                 MessageBox.Show("Mật khẩu không trùng nhau", "Lỗi");
-                return;
-            }
-
-            if (!IsStaffIdExist(staffIdInput))
-            {
-                MessageBox.Show("Nhân viên không tồn tại", "Lỗi");
                 return;
             }
 
@@ -90,6 +104,7 @@ namespace DAOVO_QLTC
             paramRoleID.ParameterName = "@QuyenID";
             paramRoleID.Value = "KT";
             command.Parameters.Add(paramRoleID);
+
             int returnVal = command.ExecuteNonQuery();
             if(returnVal == 1)
             {
@@ -152,27 +167,6 @@ namespace DAOVO_QLTC
             return passwordInput.Equals(repasswordInput, StringComparison.Ordinal);
         }
 
-        private bool IsStaffIdExist(string staffIdInput)
-        {
-            SqlConnection conn = DBUtils.getConnection();
-            conn.Open();
-            SqlCommand command = new SqlCommand();
-            command.Connection = conn;
-            command.CommandText = "Select 1 from NHANVIEN WHERE manhanvien = @StaffId";
-
-            SqlParameter paramUsername = new SqlParameter();
-            paramUsername.ParameterName = "@StaffId";
-            paramUsername.Value = staffIdInput;
-            command.Parameters.Add(paramUsername);
-            SqlDataReader reader = command.ExecuteReader();
-            if (reader.HasRows)
-            {
-                CloseConnection(conn);
-                return true;
-            }
-            CloseConnection(conn);
-            return false;
-        }
         private void CloseConnection(SqlConnection conn)
         {
             // Đóng kết nối.
@@ -221,7 +215,7 @@ namespace DAOVO_QLTC
             txtUsername.Text = "";
             txtPassword.Text = "";
             txtRePassword.Text = "";
-            txtStaffID.Text = "";
+            cbbStaff.SelectedIndex = 0;
         }
     }
 }

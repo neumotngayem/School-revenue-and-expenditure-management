@@ -71,12 +71,14 @@
             this.đổiMậtKhẩuToolStripMenuItem.Name = "đổiMậtKhẩuToolStripMenuItem";
             this.đổiMậtKhẩuToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.đổiMậtKhẩuToolStripMenuItem.Text = "Đổi mật khẩu ";
+            this.đổiMậtKhẩuToolStripMenuItem.Click += new System.EventHandler(this.ChangePwdClickEventHandler);
             // 
             // đăngXuấtToolStripMenuItem
             // 
             this.đăngXuấtToolStripMenuItem.Name = "đăngXuấtToolStripMenuItem";
             this.đăngXuấtToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.đăngXuấtToolStripMenuItem.Text = "Đăng xuất ";
+            this.đăngXuấtToolStripMenuItem.Click += new System.EventHandler(this.LogoutClickEventHandler);
             // 
             // pictureBox1
             // 

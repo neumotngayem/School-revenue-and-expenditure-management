@@ -32,5 +32,18 @@ namespace DAOVO_QLTC
             Frm_taotaikhoan frmNewAcc = new Frm_taotaikhoan();
             frmNewAcc.Show();
         }
+
+        private void ChangePwdClickEventHandler(object sender, EventArgs e)
+        {
+            Frm_doimatkhau frmDoiMatKhau = new Frm_doimatkhau();
+            frmDoiMatKhau.Show();
+        }
+
+        private void LogoutClickEventHandler(object sender, EventArgs e)
+        {
+            Frm_dangnhap frmLogin = new Frm_dangnhap();
+            frmLogin.Show();
+            this.Hide();
+        }
     }
 }

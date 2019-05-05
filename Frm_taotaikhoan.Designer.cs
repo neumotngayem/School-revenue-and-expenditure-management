@@ -40,11 +40,11 @@
             this.txtUsername = new System.Windows.Forms.TextBox();
             this.txtPassword = new System.Windows.Forms.TextBox();
             this.txtRePassword = new System.Windows.Forms.TextBox();
-            this.txtStaffID = new System.Windows.Forms.TextBox();
             this.btn_taomoi = new System.Windows.Forms.Button();
             this.btn_xoa = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.ckbShowPwd = new System.Windows.Forms.CheckBox();
+            this.cbbStaff = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.grdAccount)).BeginInit();
             this.SuspendLayout();
             // 
@@ -162,13 +162,6 @@
             this.txtRePassword.Size = new System.Drawing.Size(183, 20);
             this.txtRePassword.TabIndex = 8;
             // 
-            // txtStaffID
-            // 
-            this.txtStaffID.Location = new System.Drawing.Point(485, 57);
-            this.txtStaffID.Name = "txtStaffID";
-            this.txtStaffID.Size = new System.Drawing.Size(189, 20);
-            this.txtStaffID.TabIndex = 9;
-            // 
             // btn_taomoi
             // 
             this.btn_taomoi.BackColor = System.Drawing.Color.Silver;
@@ -216,17 +209,26 @@
             this.ckbShowPwd.UseVisualStyleBackColor = false;
             this.ckbShowPwd.CheckedChanged += new System.EventHandler(this.ShowPasswordChangeEventHandler);
             // 
+            // cbbStaff
+            // 
+            this.cbbStaff.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbbStaff.FormattingEnabled = true;
+            this.cbbStaff.Location = new System.Drawing.Point(495, 52);
+            this.cbbStaff.Name = "cbbStaff";
+            this.cbbStaff.Size = new System.Drawing.Size(194, 21);
+            this.cbbStaff.TabIndex = 17;
+            // 
             // Frm_taotaikhoan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.MediumTurquoise;
             this.ClientSize = new System.Drawing.Size(722, 431);
+            this.Controls.Add(this.cbbStaff);
             this.Controls.Add(this.ckbShowPwd);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.btn_xoa);
             this.Controls.Add(this.btn_taomoi);
-            this.Controls.Add(this.txtStaffID);
             this.Controls.Add(this.txtRePassword);
             this.Controls.Add(this.txtPassword);
             this.Controls.Add(this.txtUsername);
@@ -253,7 +255,6 @@
         private System.Windows.Forms.TextBox txtUsername;
         private System.Windows.Forms.TextBox txtPassword;
         private System.Windows.Forms.TextBox txtRePassword;
-        private System.Windows.Forms.TextBox txtStaffID;
         private System.Windows.Forms.Button btn_taomoi;
         private System.Windows.Forms.Button btn_xoa;
         private System.Windows.Forms.Label label5;
@@ -262,5 +263,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn password;
         private System.Windows.Forms.DataGridViewTextBoxColumn manhanvien;
         private System.Windows.Forms.DataGridViewTextBoxColumn quyenid;
+        private System.Windows.Forms.ComboBox cbbStaff;
     }
 }

@@ -16,5 +16,7 @@ namespace DAOVO_QLTC
         {
             InitializeComponent();
         }
+
+
     }
 }

@@ -28,21 +28,23 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.grd_dshp = new System.Windows.Forms.DataGridView();
-            this.STT = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MSV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btn_timkiemhp = new System.Windows.Forms.Button();
+            this.btn_phieuthu = new System.Windows.Forms.Button();
+            this.txt_mhs = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.mathu = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.mahs = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ngaysinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nienkhoa = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lop = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.mahp = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.mamg = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tongtien = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.txt_mhs = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.btn_timkiemhp = new System.Windows.Forms.Button();
-            this.btn_phieuthu = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.grd_dshp)).BeginInit();
             this.SuspendLayout();
             // 
@@ -55,7 +57,6 @@
             this.label1.Size = new System.Drawing.Size(373, 24);
             this.label1.TabIndex = 0;
             this.label1.Text = "DANH SÁCH HỌC PHÍ CỦA HỌC SINH";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // label2
             // 
@@ -67,77 +68,28 @@
             // 
             // grd_dshp
             // 
+            this.grd_dshp.AllowUserToAddRows = false;
+            this.grd_dshp.AllowUserToDeleteRows = false;
+            this.grd_dshp.AllowUserToResizeColumns = false;
+            this.grd_dshp.AllowUserToResizeRows = false;
             this.grd_dshp.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.grd_dshp.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.STT,
-            this.MSV,
+            this.mathu,
+            this.mahs,
             this.Column1,
             this.ngaysinh,
+            this.nienkhoa,
             this.lop,
             this.mahp,
             this.mamg,
             this.tongtien});
-            this.grd_dshp.Location = new System.Drawing.Point(3, 186);
+            this.grd_dshp.Location = new System.Drawing.Point(5, 186);
+            this.grd_dshp.MultiSelect = false;
             this.grd_dshp.Name = "grd_dshp";
-            this.grd_dshp.Size = new System.Drawing.Size(873, 268);
+            this.grd_dshp.ReadOnly = true;
+            this.grd_dshp.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.grd_dshp.Size = new System.Drawing.Size(1109, 268);
             this.grd_dshp.TabIndex = 2;
-            // 
-            // STT
-            // 
-            this.STT.HeaderText = "STT";
-            this.STT.Name = "STT";
-            // 
-            // MSV
-            // 
-            this.MSV.HeaderText = "MSV";
-            this.MSV.Name = "MSV";
-            // 
-            // Column1
-            // 
-            this.Column1.HeaderText = "Họ Tên ";
-            this.Column1.Name = "Column1";
-            // 
-            // ngaysinh
-            // 
-            this.ngaysinh.HeaderText = "Ngày sinh ";
-            this.ngaysinh.Name = "ngaysinh";
-            // 
-            // lop
-            // 
-            this.lop.HeaderText = "Lớp ";
-            this.lop.Name = "lop";
-            // 
-            // mahp
-            // 
-            this.mahp.HeaderText = "Mã loại học phí ";
-            this.mahp.Name = "mahp";
-            // 
-            // mamg
-            // 
-            this.mamg.HeaderText = "Mã miễn giảm ";
-            this.mamg.Name = "mamg";
-            // 
-            // tongtien
-            // 
-            this.tongtien.HeaderText = "Tổng tiền ";
-            this.tongtien.Name = "tongtien";
-            // 
-            // txt_mhs
-            // 
-            this.txt_mhs.Location = new System.Drawing.Point(465, 92);
-            this.txt_mhs.Name = "txt_mhs";
-            this.txt_mhs.Size = new System.Drawing.Size(100, 20);
-            this.txt_mhs.TabIndex = 3;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(386, 95);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(68, 13);
-            this.label3.TabIndex = 4;
-            this.label3.Text = "Mã học sinh ";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // btn_timkiemhp
             // 
@@ -157,12 +109,94 @@
             this.btn_phieuthu.Text = "Phiếu thu";
             this.btn_phieuthu.UseVisualStyleBackColor = true;
             // 
-            // Frm_Thuhocphi
+            // txt_mhs
+            // 
+            this.txt_mhs.Location = new System.Drawing.Point(465, 92);
+            this.txt_mhs.Name = "txt_mhs";
+            this.txt_mhs.Size = new System.Drawing.Size(100, 20);
+            this.txt_mhs.TabIndex = 3;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(386, 95);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(68, 13);
+            this.label3.TabIndex = 4;
+            this.label3.Text = "Mã học sinh ";
+            // 
+            // mathu
+            // 
+            this.mathu.DataPropertyName = "mathu";
+            this.mathu.HeaderText = "Mã Thu";
+            this.mathu.Name = "mathu";
+            this.mathu.ReadOnly = true;
+            // 
+            // mahs
+            // 
+            this.mahs.DataPropertyName = "mahs";
+            this.mahs.HeaderText = "Mã Học SInh";
+            this.mahs.Name = "mahs";
+            this.mahs.ReadOnly = true;
+            // 
+            // Column1
+            // 
+            this.Column1.DataPropertyName = "hoten";
+            this.Column1.HeaderText = "Họ Tên ";
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            // 
+            // ngaysinh
+            // 
+            this.ngaysinh.DataPropertyName = "ngaysinh";
+            this.ngaysinh.HeaderText = "Ngày sinh ";
+            this.ngaysinh.Name = "ngaysinh";
+            this.ngaysinh.ReadOnly = true;
+            // 
+            // nienkhoa
+            // 
+            this.nienkhoa.DataPropertyName = "nienkhoa";
+            this.nienkhoa.HeaderText = "Niên Khóa";
+            this.nienkhoa.Name = "nienkhoa";
+            this.nienkhoa.ReadOnly = true;
+            // 
+            // lop
+            // 
+            this.lop.DataPropertyName = "lop";
+            this.lop.HeaderText = "Lớp ";
+            this.lop.Name = "lop";
+            this.lop.ReadOnly = true;
+            // 
+            // mahp
+            // 
+            this.mahp.DataPropertyName = "maloaihocphi";
+            this.mahp.HeaderText = "Mã loại học phí ";
+            this.mahp.Name = "mahp";
+            this.mahp.ReadOnly = true;
+            // 
+            // mamg
+            // 
+            this.mamg.DataPropertyName = "mamiengiam";
+            this.mamg.HeaderText = "Mã miễn giảm ";
+            this.mamg.Name = "mamg";
+            this.mamg.ReadOnly = true;
+            // 
+            // tongtien
+            // 
+            this.tongtien.DataPropertyName = "tongtien";
+            dataGridViewCellStyle1.Format = "N2";
+            dataGridViewCellStyle1.NullValue = null;
+            this.tongtien.DefaultCellStyle = dataGridViewCellStyle1;
+            this.tongtien.HeaderText = "Tổng tiền ";
+            this.tongtien.Name = "tongtien";
+            this.tongtien.ReadOnly = true;
+            // 
+            // Frm_Danhsachhocphi
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.MediumTurquoise;
-            this.ClientSize = new System.Drawing.Size(902, 466);
+            this.ClientSize = new System.Drawing.Size(1126, 466);
             this.Controls.Add(this.btn_phieuthu);
             this.Controls.Add(this.btn_timkiemhp);
             this.Controls.Add(this.label3);
@@ -170,7 +204,7 @@
             this.Controls.Add(this.grd_dshp);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Name = "Frm_Thuhocphi";
+            this.Name = "Frm_Danhsachhocphi";
             this.Text = "HỆ THỐNG THU CHI TRƯỜNG THPT NGUYÊN XUÂN ÔN ";
             ((System.ComponentModel.ISupportInitialize)(this.grd_dshp)).EndInit();
             this.ResumeLayout(false);
@@ -183,14 +217,15 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DataGridView grd_dshp;
-        private System.Windows.Forms.TextBox txt_mhs;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btn_timkiemhp;
         private System.Windows.Forms.Button btn_phieuthu;
-        private System.Windows.Forms.DataGridViewTextBoxColumn STT;
-        private System.Windows.Forms.DataGridViewTextBoxColumn MSV;
+        private System.Windows.Forms.TextBox txt_mhs;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn mathu;
+        private System.Windows.Forms.DataGridViewTextBoxColumn mahs;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn ngaysinh;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nienkhoa;
         private System.Windows.Forms.DataGridViewTextBoxColumn lop;
         private System.Windows.Forms.DataGridViewTextBoxColumn mahp;
         private System.Windows.Forms.DataGridViewTextBoxColumn mamg;
