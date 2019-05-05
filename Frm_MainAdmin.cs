@@ -41,9 +41,12 @@ namespace DAOVO_QLTC
 
         private void LogoutClickEventHandler(object sender, EventArgs e)
         {
+            foreach (Form openForm in Application.OpenForms)
+            {
+                openForm.Hide();
+            }
             Frm_dangnhap frmLogin = new Frm_dangnhap();
             frmLogin.Show();
-            this.Hide();
         }
     }
 }
