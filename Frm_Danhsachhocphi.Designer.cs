@@ -32,10 +32,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.grd_dshp = new System.Windows.Forms.DataGridView();
-            this.btn_timkiemhp = new System.Windows.Forms.Button();
-            this.btn_phieuthu = new System.Windows.Forms.Button();
-            this.txt_mhs = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
             this.mathu = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.mahs = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -45,6 +41,10 @@
             this.mahp = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.mamg = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tongtien = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btn_timkiemhp = new System.Windows.Forms.Button();
+            this.btn_phieuthu = new System.Windows.Forms.Button();
+            this.txt_mhs = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.grd_dshp)).BeginInit();
             this.SuspendLayout();
             // 
@@ -90,40 +90,7 @@
             this.grd_dshp.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.grd_dshp.Size = new System.Drawing.Size(1109, 268);
             this.grd_dshp.TabIndex = 2;
-            // 
-            // btn_timkiemhp
-            // 
-            this.btn_timkiemhp.Location = new System.Drawing.Point(621, 89);
-            this.btn_timkiemhp.Name = "btn_timkiemhp";
-            this.btn_timkiemhp.Size = new System.Drawing.Size(75, 23);
-            this.btn_timkiemhp.TabIndex = 5;
-            this.btn_timkiemhp.Text = "Tìm kiếm ";
-            this.btn_timkiemhp.UseVisualStyleBackColor = true;
-            // 
-            // btn_phieuthu
-            // 
-            this.btn_phieuthu.Location = new System.Drawing.Point(728, 89);
-            this.btn_phieuthu.Name = "btn_phieuthu";
-            this.btn_phieuthu.Size = new System.Drawing.Size(75, 23);
-            this.btn_phieuthu.TabIndex = 6;
-            this.btn_phieuthu.Text = "Phiếu thu";
-            this.btn_phieuthu.UseVisualStyleBackColor = true;
-            // 
-            // txt_mhs
-            // 
-            this.txt_mhs.Location = new System.Drawing.Point(465, 92);
-            this.txt_mhs.Name = "txt_mhs";
-            this.txt_mhs.Size = new System.Drawing.Size(100, 20);
-            this.txt_mhs.TabIndex = 3;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(386, 95);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(68, 13);
-            this.label3.TabIndex = 4;
-            this.label3.Text = "Mã học sinh ";
+            this.grd_dshp.SelectionChanged += new System.EventHandler(this.grd_dshp_SelectionChanged);
             // 
             // mathu
             // 
@@ -190,6 +157,41 @@
             this.tongtien.HeaderText = "Tổng tiền ";
             this.tongtien.Name = "tongtien";
             this.tongtien.ReadOnly = true;
+            // 
+            // btn_timkiemhp
+            // 
+            this.btn_timkiemhp.Location = new System.Drawing.Point(621, 89);
+            this.btn_timkiemhp.Name = "btn_timkiemhp";
+            this.btn_timkiemhp.Size = new System.Drawing.Size(75, 23);
+            this.btn_timkiemhp.TabIndex = 5;
+            this.btn_timkiemhp.Text = "Tìm kiếm ";
+            this.btn_timkiemhp.UseVisualStyleBackColor = true;
+            // 
+            // btn_phieuthu
+            // 
+            this.btn_phieuthu.Location = new System.Drawing.Point(728, 89);
+            this.btn_phieuthu.Name = "btn_phieuthu";
+            this.btn_phieuthu.Size = new System.Drawing.Size(75, 23);
+            this.btn_phieuthu.TabIndex = 6;
+            this.btn_phieuthu.Text = "Phiếu thu";
+            this.btn_phieuthu.UseVisualStyleBackColor = true;
+            this.btn_phieuthu.Click += new System.EventHandler(this.btn_phieuthu_Click);
+            // 
+            // txt_mhs
+            // 
+            this.txt_mhs.Location = new System.Drawing.Point(465, 92);
+            this.txt_mhs.Name = "txt_mhs";
+            this.txt_mhs.Size = new System.Drawing.Size(100, 20);
+            this.txt_mhs.TabIndex = 3;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(386, 95);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(68, 13);
+            this.label3.TabIndex = 4;
+            this.label3.Text = "Mã học sinh ";
             // 
             // Frm_Danhsachhocphi
             // 

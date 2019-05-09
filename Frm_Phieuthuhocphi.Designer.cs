@@ -37,21 +37,21 @@
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
-            this.txt_ten = new System.Windows.Forms.TextBox();
-            this.txt_mhs = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.btnPrintReceipt = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
-            this.txt_ngaysinh = new System.Windows.Forms.TextBox();
-            this.txt_lop = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
-            this.txt_nienkhoa = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.label14 = new System.Windows.Forms.Label();
+            this.ckb_rule = new System.Windows.Forms.CheckBox();
+            this.tbx_vietbangchu = new System.Windows.Forms.TextBox();
+            this.lbl_mathu = new System.Windows.Forms.Label();
+            this.tbx_noidungthu = new System.Windows.Forms.TextBox();
+            this.lbl_mahs = new System.Windows.Forms.Label();
+            this.lbl_ten = new System.Windows.Forms.Label();
+            this.lbl_ngaysinh = new System.Windows.Forms.Label();
+            this.lbl_lop = new System.Windows.Forms.Label();
+            this.lbl_nienkhoa = new System.Windows.Forms.Label();
+            this.lbl_tongtien = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -140,30 +140,6 @@
             this.label12.TabIndex = 12;
             this.label12.Text = "Mã học sinh:";
             // 
-            // txt_ten
-            // 
-            this.txt_ten.Location = new System.Drawing.Point(187, 122);
-            this.txt_ten.Name = "txt_ten";
-            this.txt_ten.ReadOnly = true;
-            this.txt_ten.Size = new System.Drawing.Size(381, 20);
-            this.txt_ten.TabIndex = 15;
-            // 
-            // txt_mhs
-            // 
-            this.txt_mhs.Location = new System.Drawing.Point(187, 86);
-            this.txt_mhs.Name = "txt_mhs";
-            this.txt_mhs.ReadOnly = true;
-            this.txt_mhs.Size = new System.Drawing.Size(381, 20);
-            this.txt_mhs.TabIndex = 16;
-            // 
-            // textBox5
-            // 
-            this.textBox5.Location = new System.Drawing.Point(187, 381);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.ReadOnly = true;
-            this.textBox5.Size = new System.Drawing.Size(381, 20);
-            this.textBox5.TabIndex = 19;
-            // 
             // label10
             // 
             this.label10.AutoSize = true;
@@ -181,6 +157,7 @@
             this.btnPrintReceipt.TabIndex = 21;
             this.btnPrintReceipt.Text = "In Biên Lai Thu Tiền";
             this.btnPrintReceipt.UseVisualStyleBackColor = true;
+            this.btnPrintReceipt.Click += new System.EventHandler(this.btnPrintReceipt_Click);
             // 
             // label7
             // 
@@ -192,22 +169,6 @@
             this.label7.TabIndex = 22;
             this.label7.Text = "Ngày sinh:";
             // 
-            // txt_ngaysinh
-            // 
-            this.txt_ngaysinh.Location = new System.Drawing.Point(187, 154);
-            this.txt_ngaysinh.Name = "txt_ngaysinh";
-            this.txt_ngaysinh.ReadOnly = true;
-            this.txt_ngaysinh.Size = new System.Drawing.Size(381, 20);
-            this.txt_ngaysinh.TabIndex = 23;
-            // 
-            // txt_lop
-            // 
-            this.txt_lop.Location = new System.Drawing.Point(187, 189);
-            this.txt_lop.Name = "txt_lop";
-            this.txt_lop.ReadOnly = true;
-            this.txt_lop.Size = new System.Drawing.Size(381, 20);
-            this.txt_lop.TabIndex = 25;
-            // 
             // label11
             // 
             this.label11.AutoSize = true;
@@ -217,14 +178,6 @@
             this.label11.Size = new System.Drawing.Size(31, 15);
             this.label11.TabIndex = 24;
             this.label11.Text = "Lớp:";
-            // 
-            // txt_nienkhoa
-            // 
-            this.txt_nienkhoa.Location = new System.Drawing.Point(187, 224);
-            this.txt_nienkhoa.Name = "txt_nienkhoa";
-            this.txt_nienkhoa.ReadOnly = true;
-            this.txt_nienkhoa.Size = new System.Drawing.Size(381, 20);
-            this.txt_nienkhoa.TabIndex = 27;
             // 
             // label13
             // 
@@ -236,41 +189,101 @@
             this.label13.TabIndex = 26;
             this.label13.Text = "Niên khóa:";
             // 
-            // checkBox1
+            // ckb_rule
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(48, 540);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(400, 17);
-            this.checkBox1.TabIndex = 28;
-            this.checkBox1.Text = "Bằng việc nhấn nút In Biên Lai Thu Tiền đồng nghĩa với đã thu đủ số tiền trên";
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.ckb_rule.AutoSize = true;
+            this.ckb_rule.Location = new System.Drawing.Point(48, 540);
+            this.ckb_rule.Name = "ckb_rule";
+            this.ckb_rule.Size = new System.Drawing.Size(400, 17);
+            this.ckb_rule.TabIndex = 28;
+            this.ckb_rule.Text = "Bằng việc nhấn nút In Biên Lai Thu Tiền đồng nghĩa với đã thu đủ số tiền trên";
+            this.ckb_rule.UseVisualStyleBackColor = true;
             // 
-            // textBox1
+            // tbx_vietbangchu
             // 
-            this.textBox1.Location = new System.Drawing.Point(187, 262);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(381, 102);
-            this.textBox1.TabIndex = 29;
+            this.tbx_vietbangchu.Location = new System.Drawing.Point(187, 426);
+            this.tbx_vietbangchu.Multiline = true;
+            this.tbx_vietbangchu.Name = "tbx_vietbangchu";
+            this.tbx_vietbangchu.Size = new System.Drawing.Size(381, 73);
+            this.tbx_vietbangchu.TabIndex = 30;
             // 
-            // textBox2
+            // lbl_mathu
             // 
-            this.textBox2.Location = new System.Drawing.Point(187, 426);
-            this.textBox2.Multiline = true;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(381, 73);
-            this.textBox2.TabIndex = 30;
+            this.lbl_mathu.AutoSize = true;
+            this.lbl_mathu.Location = new System.Drawing.Point(678, 36);
+            this.lbl_mathu.Name = "lbl_mathu";
+            this.lbl_mathu.Size = new System.Drawing.Size(41, 13);
+            this.lbl_mathu.TabIndex = 31;
+            this.lbl_mathu.Text = "label14";
             // 
-            // label14
+            // tbx_noidungthu
             // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(678, 36);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(41, 13);
-            this.label14.TabIndex = 31;
-            this.label14.Text = "label14";
+            this.tbx_noidungthu.Location = new System.Drawing.Point(187, 262);
+            this.tbx_noidungthu.Multiline = true;
+            this.tbx_noidungthu.Name = "tbx_noidungthu";
+            this.tbx_noidungthu.ReadOnly = true;
+            this.tbx_noidungthu.Size = new System.Drawing.Size(381, 102);
+            this.tbx_noidungthu.TabIndex = 29;
+            // 
+            // lbl_mahs
+            // 
+            this.lbl_mahs.AutoSize = true;
+            this.lbl_mahs.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_mahs.Location = new System.Drawing.Point(184, 89);
+            this.lbl_mahs.Name = "lbl_mahs";
+            this.lbl_mahs.Size = new System.Drawing.Size(48, 13);
+            this.lbl_mahs.TabIndex = 32;
+            this.lbl_mahs.Text = "label14";
+            // 
+            // lbl_ten
+            // 
+            this.lbl_ten.AutoSize = true;
+            this.lbl_ten.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_ten.Location = new System.Drawing.Point(184, 125);
+            this.lbl_ten.Name = "lbl_ten";
+            this.lbl_ten.Size = new System.Drawing.Size(48, 13);
+            this.lbl_ten.TabIndex = 33;
+            this.lbl_ten.Text = "label15";
+            // 
+            // lbl_ngaysinh
+            // 
+            this.lbl_ngaysinh.AutoSize = true;
+            this.lbl_ngaysinh.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_ngaysinh.Location = new System.Drawing.Point(184, 157);
+            this.lbl_ngaysinh.Name = "lbl_ngaysinh";
+            this.lbl_ngaysinh.Size = new System.Drawing.Size(48, 13);
+            this.lbl_ngaysinh.TabIndex = 34;
+            this.lbl_ngaysinh.Text = "label16";
+            // 
+            // lbl_lop
+            // 
+            this.lbl_lop.AutoSize = true;
+            this.lbl_lop.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_lop.Location = new System.Drawing.Point(184, 192);
+            this.lbl_lop.Name = "lbl_lop";
+            this.lbl_lop.Size = new System.Drawing.Size(48, 13);
+            this.lbl_lop.TabIndex = 35;
+            this.lbl_lop.Text = "label17";
+            // 
+            // lbl_nienkhoa
+            // 
+            this.lbl_nienkhoa.AutoSize = true;
+            this.lbl_nienkhoa.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_nienkhoa.Location = new System.Drawing.Point(184, 227);
+            this.lbl_nienkhoa.Name = "lbl_nienkhoa";
+            this.lbl_nienkhoa.Size = new System.Drawing.Size(48, 13);
+            this.lbl_nienkhoa.TabIndex = 36;
+            this.lbl_nienkhoa.Text = "label18";
+            // 
+            // lbl_tongtien
+            // 
+            this.lbl_tongtien.AutoSize = true;
+            this.lbl_tongtien.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_tongtien.Location = new System.Drawing.Point(184, 388);
+            this.lbl_tongtien.Name = "lbl_tongtien";
+            this.lbl_tongtien.Size = new System.Drawing.Size(48, 13);
+            this.lbl_tongtien.TabIndex = 37;
+            this.lbl_tongtien.Text = "label19";
             // 
             // Frm_Phieuthuhocphi
             // 
@@ -278,20 +291,20 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.MediumTurquoise;
             this.ClientSize = new System.Drawing.Size(760, 573);
-            this.Controls.Add(this.label14);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.checkBox1);
-            this.Controls.Add(this.txt_nienkhoa);
+            this.Controls.Add(this.lbl_tongtien);
+            this.Controls.Add(this.lbl_nienkhoa);
+            this.Controls.Add(this.lbl_lop);
+            this.Controls.Add(this.lbl_ngaysinh);
+            this.Controls.Add(this.lbl_ten);
+            this.Controls.Add(this.lbl_mahs);
+            this.Controls.Add(this.lbl_mathu);
+            this.Controls.Add(this.tbx_vietbangchu);
+            this.Controls.Add(this.tbx_noidungthu);
+            this.Controls.Add(this.ckb_rule);
             this.Controls.Add(this.label13);
-            this.Controls.Add(this.txt_lop);
             this.Controls.Add(this.label11);
-            this.Controls.Add(this.txt_ngaysinh);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.btnPrintReceipt);
-            this.Controls.Add(this.textBox5);
-            this.Controls.Add(this.txt_mhs);
-            this.Controls.Add(this.txt_ten);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.label9);
@@ -320,20 +333,20 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.TextBox txt_ten;
-        private System.Windows.Forms.TextBox txt_mhs;
-        private System.Windows.Forms.TextBox textBox5;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Button btnPrintReceipt;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox txt_ngaysinh;
-        private System.Windows.Forms.TextBox txt_lop;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.TextBox txt_nienkhoa;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.CheckBox checkBox1;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.CheckBox ckb_rule;
+        private System.Windows.Forms.TextBox tbx_vietbangchu;
+        private System.Windows.Forms.Label lbl_mathu;
+        private System.Windows.Forms.TextBox tbx_noidungthu;
+        private System.Windows.Forms.Label lbl_mahs;
+        private System.Windows.Forms.Label lbl_ten;
+        private System.Windows.Forms.Label lbl_ngaysinh;
+        private System.Windows.Forms.Label lbl_lop;
+        private System.Windows.Forms.Label lbl_nienkhoa;
+        private System.Windows.Forms.Label lbl_tongtien;
     }
 }

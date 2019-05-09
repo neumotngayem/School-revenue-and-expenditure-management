@@ -36,8 +36,8 @@ namespace DAOVO_QLTC
                 {
                    string rowMaLoaiHocPhi = row["maloaihocphi"].ToString();
                    string rowMaMienGiam = row["mamiengiam"].ToString();
-                    double totalTutionFee = calTotalTutionFee(rowMaLoaiHocPhi);
-                    double totalTutionOff = calTotalTutionFeeOff(rowMaMienGiam);
+                    double totalTutionFee = CalTotalTutionFee(rowMaLoaiHocPhi);
+                    double totalTutionOff = CalTotalTutionFeeOff(rowMaMienGiam);
                     double haveToPayTution = totalTutionFee - (totalTutionFee * totalTutionOff);
 
                     row["tongtien"] = haveToPayTution.ToString("N0", CultureInfo.InvariantCulture);
@@ -45,9 +45,9 @@ namespace DAOVO_QLTC
             }
 
             grd_dshp.DataSource = dataTable;
-        }
+        }   
 
-        private double calTotalTutionFee(string maloaiphi)
+        private double CalTotalTutionFee(string maloaiphi)
         {
             SqlConnection conn = DBUtils.getConnection();
             conn.Open();
@@ -67,7 +67,7 @@ namespace DAOVO_QLTC
             return tongtienhoc;
         }
 
-        private double calTotalTutionFeeOff(string maloaimiengiam)
+        private double CalTotalTutionFeeOff(string maloaimiengiam)
         {
             SqlConnection conn = DBUtils.getConnection();
             conn.Open();
@@ -95,5 +95,19 @@ namespace DAOVO_QLTC
             conn.Dispose();
         }
 
+        private void grd_dshp_SelectionChanged(object sender, EventArgs e)
+        {
+            if (grd_dshp.Rows.Count != 0 && grd_dshp.Rows != null)
+            {
+                mahsSelected = grd_dshp[0, grd_dshp.CurrentRow.Index].Value.ToString();
+
+            }
+        }
+
+        private void btn_phieuthu_Click(object sender, EventArgs e)
+        {
+            Frm_Phieuthuhocphi phieuthuhocphi = new Frm_Phieuthuhocphi();
+            phieuthuhocphi.Show();
+        }
     }
 }
