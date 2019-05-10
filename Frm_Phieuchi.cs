@@ -7,16 +7,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Data.SqlClient;
-using System.Security.Cryptography;
 
 namespace DAOVO_QLTC
 {
-    public partial class Frm_Quanlinguonthu : Form
+    public partial class Frm_Phieuchi : Form
     {
-        public Frm_Quanlinguonthu()
+        public Frm_Phieuchi()
         {
             InitializeComponent();
         }
+
+      
     }
 }
