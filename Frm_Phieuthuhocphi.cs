@@ -17,14 +17,15 @@ namespace DAOVO_QLTC
 {
     public partial class Frm_Phieuthuhocphi : Form
     {
-        private string mahsSelected;
-        private string khoanthu;
-        private string miengiam;
+        private string maphieuthuSelected;
+        private string khoanthu = "";
+        private string miengiam = "";
+        private double tongtienNum;
 
         public Frm_Phieuthuhocphi()
         {
             InitializeComponent();
-            this.mahsSelected = Frm_Danhsachhocphi.mahsSelected;
+            this.maphieuthuSelected = Frm_Danhsachhocphi.maphieuthuSelected;
             LoadGridData();
         }
 
@@ -34,7 +35,15 @@ namespace DAOVO_QLTC
             conn.Open();
             SqlCommand command = new SqlCommand();
             command.Connection = conn;
-            command.CommandText = "Select hp.mathu, hp.mahs, hs.hoten, hs.ngaysinh, hs.nienkhoa, hs.lop, hp.maloaihocphi, hp.mamiengiam  from THUHOCPHI hp JOIN HOCSINH hs ON hs.mahs = hp.mahs";
+            command.CommandText = "Select hp.mathu, hp.mahs, hs.hoten, hs.ngaysinh, hs.nienkhoa, hs.lop, hp.maloaihocphi, hp.mamiengiam  from THUHOCPHI hp JOIN HOCSINH hs ON hs.mahs = hp.mahs WHERE hp.mathu = @Mathu";
+
+            SqlParameter paramMathu = new SqlParameter
+            {
+                ParameterName = "@Mathu",
+                Value = maphieuthuSelected
+            };
+            command.Parameters.Add(paramMathu);
+
             SqlDataReader reader = command.ExecuteReader();
             reader.Read();
             lbl_mahs.Text = (string)reader["mahs"];
@@ -49,14 +58,17 @@ namespace DAOVO_QLTC
             string maloaimiengiam = (string)reader["mamiengiam"];
 
             double totalTutionFee = CalTotalTutionFee(maloaihocphi);
-            double totalTutionOff = CalTotalTutionFeeOff(maloaimiengiam);
+            double totalTutionOff = 0;
+            if (!string.IsNullOrEmpty(maloaimiengiam))
+            {
+                totalTutionOff = CalTotalTutionFeeOff(maloaimiengiam);
+                this.miengiam = (AggTutionFeeOffName(maloaimiengiam));
+            }
             double haveToPayTution = totalTutionFee - (totalTutionFee * totalTutionOff);
-
+            tongtienNum = haveToPayTution;
             lbl_tongtien.Text = haveToPayTution.ToString("N0", CultureInfo.InvariantCulture);
 
             this.khoanthu = AggTutionFeeName(maloaihocphi);
-            this.miengiam = (AggTutionFeeOffName(maloaimiengiam));
-
             tbx_noidungthu.AppendText(this.khoanthu);
             tbx_noidungthu.AppendText(Environment.NewLine);
             tbx_noidungthu.AppendText(miengiam);  
@@ -184,8 +196,50 @@ namespace DAOVO_QLTC
             var result = template(data);
             var Renderer = new IronPdf.HtmlToPdf();
             var PDF = Renderer.RenderHtmlAsPdf(result);
-            var OutputPath = "Invoice.pdf";
-            PDF.SaveAs(OutputPath);
+            FolderBrowserDialog folderDlg = new FolderBrowserDialog();
+            folderDlg.ShowNewFolderButton = true;
+            // Show the FolderBrowserDialog.
+            DialogResult diaresult = folderDlg.ShowDialog();
+            if (diaresult == DialogResult.OK)
+            {
+                var OutputPath = folderDlg.SelectedPath+"\\Phiếu thu học phí " +lbl_mahs.Text+".pdf";
+                PDF.SaveAs(OutputPath);
+                MessageBox.Show("Đã in xong phiếu thu học phí", "Thông báo");
+                ckb_rule.Checked = false;
+                this.updatePhieuThu();
+            }
+        }
+
+        private void updatePhieuThu()
+        {
+            SqlConnection conn = DBUtils.getConnection();
+            conn.Open();
+            SqlCommand command = new SqlCommand();
+            command.Connection = conn;
+            command.CommandText = "UPDATE THUHOCPHI SET  dathu = @Dathu, ngaythu = GETDATE(), nguoithu = @Nguoithu WHERE mathu = @Mathu";
+
+            SqlParameter paramDathu = new SqlParameter
+            {
+                ParameterName = "@Dathu",
+                Value = tongtienNum
+            };
+            command.Parameters.Add(paramDathu);
+
+            SqlParameter paramNguoithu = new SqlParameter
+            {
+                ParameterName = "@Nguoithu",
+                Value = Frm_dangnhap.manhanvien
+            };
+            command.Parameters.Add(paramNguoithu);
+
+            SqlParameter paramMathu = new SqlParameter
+            {
+                ParameterName = "@Mathu",
+                Value = lbl_mathu.Text
+            };
+            command.Parameters.Add(paramMathu);
+
+            command.ExecuteNonQuery();
         }
     }
 }

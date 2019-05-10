@@ -14,18 +14,27 @@ namespace DAOVO_QLTC
 {
     public partial class Frm_Danhsachhocphi : Form
     {
-        public static string mahsSelected;
+        public static string maphieuthuSelected;
         public Frm_Danhsachhocphi()
         {
             InitializeComponent();
-            LoadGridData();
+            LoadGridData("");
         }
 
-        private void LoadGridData()
+        private void LoadGridData(string mahs)
         {
             SqlConnection conn = DBUtils.getConnection();
             conn.Open();
-            SqlDataAdapter dataAdapter = new SqlDataAdapter("Select hp.mathu, hp.mahs, hs.hoten, hs.ngaysinh, hs.nienkhoa, hs.lop, hp.maloaihocphi, hp.mamiengiam, '' as tongtien  from THUHOCPHI hp JOIN HOCSINH hs ON hs.mahs = hp.mahs", conn);
+            SqlDataAdapter dataAdapter;
+            if (!string.IsNullOrWhiteSpace(mahs))
+            {
+                dataAdapter = new SqlDataAdapter("Select hp.mathu, hp.mahs, hs.hoten, hs.ngaysinh, hs.nienkhoa, hs.lop, hp.maloaihocphi, hp.mamiengiam, '' as tongtien, CASE WHEN hp.dathu IS NOT NULL THEN 'Đã thu' ELSE '' END AS dathu  from THUHOCPHI hp JOIN HOCSINH hs ON hs.mahs = hp.mahs WHERE hp.mahs LIKE '" + mahs+"%'", conn);
+            }
+            else
+            {
+                dataAdapter = new SqlDataAdapter("Select hp.mathu, hp.mahs, hs.hoten, hs.ngaysinh, hs.nienkhoa, hs.lop, hp.maloaihocphi, hp.mamiengiam, '' as tongtien, CASE WHEN hp.dathu IS NOT NULL THEN 'Đã thu' ELSE '' END AS dathu  from THUHOCPHI hp JOIN HOCSINH hs ON hs.mahs = hp.mahs", conn);
+            }
+  
             DataTable dataTable = new DataTable();
             
             dataAdapter.Fill(dataTable);
@@ -37,7 +46,11 @@ namespace DAOVO_QLTC
                    string rowMaLoaiHocPhi = row["maloaihocphi"].ToString();
                    string rowMaMienGiam = row["mamiengiam"].ToString();
                     double totalTutionFee = CalTotalTutionFee(rowMaLoaiHocPhi);
-                    double totalTutionOff = CalTotalTutionFeeOff(rowMaMienGiam);
+                    double totalTutionOff = 0;
+                    if (!string.IsNullOrEmpty(rowMaMienGiam))
+                    {
+                        totalTutionOff = CalTotalTutionFeeOff(rowMaMienGiam);
+                    }          
                     double haveToPayTution = totalTutionFee - (totalTutionFee * totalTutionOff);
 
                     row["tongtien"] = haveToPayTution.ToString("N0", CultureInfo.InvariantCulture);
@@ -99,8 +112,7 @@ namespace DAOVO_QLTC
         {
             if (grd_dshp.Rows.Count != 0 && grd_dshp.Rows != null)
             {
-                mahsSelected = grd_dshp[0, grd_dshp.CurrentRow.Index].Value.ToString();
-
+                maphieuthuSelected = grd_dshp[0, grd_dshp.CurrentRow.Index].Value.ToString(); 
             }
         }
 
@@ -108,6 +120,12 @@ namespace DAOVO_QLTC
         {
             Frm_Phieuthuhocphi phieuthuhocphi = new Frm_Phieuthuhocphi();
             phieuthuhocphi.Show();
+        }
+
+        private void btn_timkiemhp_Click(object sender, EventArgs e)
+        {
+            LoadGridData(txt_mhs.Text);
+            grd_dshp.Refresh();
         }
     }
 }

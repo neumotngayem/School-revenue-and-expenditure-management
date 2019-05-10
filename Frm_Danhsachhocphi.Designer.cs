@@ -28,10 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.grd_dshp = new System.Windows.Forms.DataGridView();
+            this.btn_timkiemhp = new System.Windows.Forms.Button();
+            this.btn_phieuthu = new System.Windows.Forms.Button();
+            this.txt_mhs = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.mathu = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.mahs = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -41,10 +45,7 @@
             this.mahp = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.mamg = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tongtien = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btn_timkiemhp = new System.Windows.Forms.Button();
-            this.btn_phieuthu = new System.Windows.Forms.Button();
-            this.txt_mhs = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
+            this.dathu = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.grd_dshp)).BeginInit();
             this.SuspendLayout();
             // 
@@ -82,7 +83,8 @@
             this.lop,
             this.mahp,
             this.mamg,
-            this.tongtien});
+            this.tongtien,
+            this.dathu});
             this.grd_dshp.Location = new System.Drawing.Point(5, 186);
             this.grd_dshp.MultiSelect = false;
             this.grd_dshp.Name = "grd_dshp";
@@ -91,6 +93,42 @@
             this.grd_dshp.Size = new System.Drawing.Size(1109, 268);
             this.grd_dshp.TabIndex = 2;
             this.grd_dshp.SelectionChanged += new System.EventHandler(this.grd_dshp_SelectionChanged);
+            // 
+            // btn_timkiemhp
+            // 
+            this.btn_timkiemhp.Location = new System.Drawing.Point(621, 89);
+            this.btn_timkiemhp.Name = "btn_timkiemhp";
+            this.btn_timkiemhp.Size = new System.Drawing.Size(75, 23);
+            this.btn_timkiemhp.TabIndex = 5;
+            this.btn_timkiemhp.Text = "Tìm kiếm ";
+            this.btn_timkiemhp.UseVisualStyleBackColor = true;
+            this.btn_timkiemhp.Click += new System.EventHandler(this.btn_timkiemhp_Click);
+            // 
+            // btn_phieuthu
+            // 
+            this.btn_phieuthu.Location = new System.Drawing.Point(728, 89);
+            this.btn_phieuthu.Name = "btn_phieuthu";
+            this.btn_phieuthu.Size = new System.Drawing.Size(75, 23);
+            this.btn_phieuthu.TabIndex = 6;
+            this.btn_phieuthu.Text = "Phiếu thu";
+            this.btn_phieuthu.UseVisualStyleBackColor = true;
+            this.btn_phieuthu.Click += new System.EventHandler(this.btn_phieuthu_Click);
+            // 
+            // txt_mhs
+            // 
+            this.txt_mhs.Location = new System.Drawing.Point(465, 92);
+            this.txt_mhs.Name = "txt_mhs";
+            this.txt_mhs.Size = new System.Drawing.Size(100, 20);
+            this.txt_mhs.TabIndex = 3;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(386, 95);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(68, 13);
+            this.label3.TabIndex = 4;
+            this.label3.Text = "Mã học sinh ";
             // 
             // mathu
             // 
@@ -151,47 +189,19 @@
             // tongtien
             // 
             this.tongtien.DataPropertyName = "tongtien";
-            dataGridViewCellStyle1.Format = "N2";
-            dataGridViewCellStyle1.NullValue = null;
-            this.tongtien.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Format = "N2";
+            dataGridViewCellStyle2.NullValue = null;
+            this.tongtien.DefaultCellStyle = dataGridViewCellStyle2;
             this.tongtien.HeaderText = "Tổng tiền ";
             this.tongtien.Name = "tongtien";
             this.tongtien.ReadOnly = true;
             // 
-            // btn_timkiemhp
+            // dathu
             // 
-            this.btn_timkiemhp.Location = new System.Drawing.Point(621, 89);
-            this.btn_timkiemhp.Name = "btn_timkiemhp";
-            this.btn_timkiemhp.Size = new System.Drawing.Size(75, 23);
-            this.btn_timkiemhp.TabIndex = 5;
-            this.btn_timkiemhp.Text = "Tìm kiếm ";
-            this.btn_timkiemhp.UseVisualStyleBackColor = true;
-            // 
-            // btn_phieuthu
-            // 
-            this.btn_phieuthu.Location = new System.Drawing.Point(728, 89);
-            this.btn_phieuthu.Name = "btn_phieuthu";
-            this.btn_phieuthu.Size = new System.Drawing.Size(75, 23);
-            this.btn_phieuthu.TabIndex = 6;
-            this.btn_phieuthu.Text = "Phiếu thu";
-            this.btn_phieuthu.UseVisualStyleBackColor = true;
-            this.btn_phieuthu.Click += new System.EventHandler(this.btn_phieuthu_Click);
-            // 
-            // txt_mhs
-            // 
-            this.txt_mhs.Location = new System.Drawing.Point(465, 92);
-            this.txt_mhs.Name = "txt_mhs";
-            this.txt_mhs.Size = new System.Drawing.Size(100, 20);
-            this.txt_mhs.TabIndex = 3;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(386, 95);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(68, 13);
-            this.label3.TabIndex = 4;
-            this.label3.Text = "Mã học sinh ";
+            this.dathu.DataPropertyName = "dathu";
+            this.dathu.HeaderText = "Ghi chú";
+            this.dathu.Name = "dathu";
+            this.dathu.ReadOnly = true;
             // 
             // Frm_Danhsachhocphi
             // 
@@ -232,5 +242,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn mahp;
         private System.Windows.Forms.DataGridViewTextBoxColumn mamg;
         private System.Windows.Forms.DataGridViewTextBoxColumn tongtien;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dathu;
     }
 }

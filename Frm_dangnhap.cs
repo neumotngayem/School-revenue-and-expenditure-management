@@ -14,6 +14,8 @@ namespace DAOVO_QLTC
 {
     public partial class Frm_dangnhap : Form
     {
+        public static string manhanvien;
+
         public Frm_dangnhap()
         {
             InitializeComponent();
@@ -96,7 +98,8 @@ namespace DAOVO_QLTC
                         conn.Close();
                         // Hủy đối tượng, giải phóng tài nguyên.
                         conn.Dispose();
-                        if(roleAcc == "ADM")
+                        manhanvien = usernameInput;
+                        if (roleAcc == "ADM")
                         {
                             Frm_MainAdmin mainAdmin = new Frm_MainAdmin();
                             mainAdmin.Show();
