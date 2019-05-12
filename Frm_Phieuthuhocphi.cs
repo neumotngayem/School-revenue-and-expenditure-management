@@ -17,15 +17,17 @@ namespace DAOVO_QLTC
 {
     public partial class Frm_Phieuthuhocphi : Form
     {
+        private readonly Frm_Danhsachhocphi currentFrmDsHocPhi;
         private string maphieuthuSelected;
         private string khoanthu = "";
         private string miengiam = "";
         private double tongtienNum;
 
-        public Frm_Phieuthuhocphi()
+        public Frm_Phieuthuhocphi(Frm_Danhsachhocphi frm_Danhsachhocphi)
         {
             InitializeComponent();
             this.maphieuthuSelected = Frm_Danhsachhocphi.maphieuthuSelected;
+            currentFrmDsHocPhi = frm_Danhsachhocphi;
             LoadGridData();
         }
 
@@ -240,6 +242,7 @@ namespace DAOVO_QLTC
             command.Parameters.Add(paramMathu);
 
             command.ExecuteNonQuery();
+            currentFrmDsHocPhi.LoadGridData("");
         }
     }
 }
