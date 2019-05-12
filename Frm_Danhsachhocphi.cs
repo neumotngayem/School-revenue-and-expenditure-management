@@ -21,7 +21,7 @@ namespace DAOVO_QLTC
             LoadGridData("");
         }
 
-        private void LoadGridData(string mahs)
+        public void LoadGridData(string mahs)
         {
             SqlConnection conn = DBUtils.getConnection();
             conn.Open();
@@ -58,6 +58,7 @@ namespace DAOVO_QLTC
             }
 
             grd_dshp.DataSource = dataTable;
+            grd_dshp.Refresh();
         }   
 
         private double CalTotalTutionFee(string maloaiphi)
@@ -118,14 +119,13 @@ namespace DAOVO_QLTC
 
         private void btn_phieuthu_Click(object sender, EventArgs e)
         {
-            Frm_Phieuthuhocphi phieuthuhocphi = new Frm_Phieuthuhocphi();
+            Frm_Phieuthuhocphi phieuthuhocphi = new Frm_Phieuthuhocphi(this);
             phieuthuhocphi.Show();
         }
 
         private void btn_timkiemhp_Click(object sender, EventArgs e)
         {
             LoadGridData(txt_mhs.Text);
-            grd_dshp.Refresh();
         }
     }
 }
